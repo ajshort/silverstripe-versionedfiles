@@ -69,7 +69,7 @@ class VersionedFileExtension extends DataExtension {
 				$versions->map('VersionNumber'),
 				null,
 				null,
-				_t('VersionedFiles.SELECTAVERSION', '(Select a Version)')	
+				_t('VersionedFiles.SELECTAVERSION', '(Select a Version and Save to apply)')
 			));
 		}
 
