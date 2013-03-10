@@ -64,7 +64,7 @@ class VersionedFileExtension extends DataExtension {
 		if($versions && $versions->Count() && $this->owner->canEdit()) {
 			$fields->addFieldToTab('Root.History', new HeaderField('RollbackHeader', _t('VersionedFiles.ROLLBACKPREVVERSION', 'Rollback to a Previous Version')));
 			$fields->addFieldToTab('Root.History', $versionDropdown = new DropdownField('PreviousVersion', '', $versions->map('VersionNumber')));
-			$versionDropdown->setEmptyString(_t('VersionedFiles.SELECTAVERSION', '(Select a Version)'));
+			$versionDropdown->setEmptyString(_t('VersionedFiles.SELECTAVERSIONANDSAVE', '(Select a Version and Save to apply)'));
 		}
 
 		$fields->addFieldToTab('Root.History', $gridField);
