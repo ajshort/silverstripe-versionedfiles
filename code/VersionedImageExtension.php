@@ -49,6 +49,7 @@ class VersionedImageExtension extends DataObjectDecorator {
 				case 'setsize':
 				case 'paddedimage':
 				case 'croppedimage':
+				case 'croppedfocusedimage':
 					$this->owner->$method($size[0], $size[1]);
 					break;
 
