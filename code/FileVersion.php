@@ -129,6 +129,12 @@ class FileVersion extends DataObject
         }
 
         Filesystem::makeFolder($base);
+        $versionsDir = dirname($base);
+        $htaccessPath = Controller::join_links($versionsDir, '.htaccess');
+        if (!file_exists($htaccessPath)) {
+            $content = "Order deny,allow\nDeny from all";
+            file_put_contents($htaccessPath, $content);
+        }
 
         $extension = $file->getExtension();
         $basename  = basename($file->Name, $extension);
