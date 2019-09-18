@@ -201,6 +201,15 @@ class VersionedFileTest extends FunctionalTest
         $this->assertTrue(is_dir($this->folder->getFullPath() . '/_versions'));
     }
 
+    public function testVersionsFolderProtected()
+    {
+        $file = new File();
+        $file->ParentID = $this->folder->ID;
+        $file->Filename = $this->folder->getFilename() . 'test-file.txt';
+        $file->write();
+        $this->assertTrue(file_exists($this->folder->getFullPath() . '/_versions/.htaccess'));
+    }
+
     protected function getFileEditForm()
     {
         $admin  = new AssetAdmin();
